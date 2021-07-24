@@ -20,11 +20,11 @@ export const containerOpen = elem => {
   })
 }
 
-export const heroOpen = elem => {
+export const toRight = elem => {
 	gsap.to(elem, {
 		duration: 2,
 		delay: 1,
 		clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-		// ease: "power3.out"
+		ease: "power3.out"
   })
 }

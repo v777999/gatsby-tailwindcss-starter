@@ -2,14 +2,14 @@ import * as React from "react"
 import { useRef, useEffect } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import gsap from "gsap"
-import { heroOpen } from "../components/animate"
+import { toRight } from "../components/animate"
 import HeroImg from "../images/Hero-Slider-1.jpg"
 
 const Hero = () => {
   let heroOpenImg = useRef(null)
 
   useEffect(() => {
-    heroOpen(heroOpenImg)
+    toRight(heroOpenImg)
   }, [])
 
   return (
