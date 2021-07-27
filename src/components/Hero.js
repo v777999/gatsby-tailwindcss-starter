@@ -27,10 +27,11 @@ const Hero = () => {
           height: "100vh",
 					objectFit: "cover",
 					placeHolder: "none",
+					loading: "eager",
           //clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
           // You can set a maximum height for the image, if you wish.
           // maxHeight: 600,
-        }}
+				}}
         layout="constrained"
         // You can optionally force an aspect ratio for the generated image
         //aspectRatio={3 / 1}
