@@ -6,10 +6,17 @@ import { toRight } from "../components/animate"
 import HeroImg from "../images/Hero-Slider-1.jpg"
 
 const Hero = () => {
+  let heroOpenImg = useRef(null)
+
+  useEffect(() => {
+    toRight(heroOpenImg)
+  }, [])
+
   return (
-    <div 
+    <div className="heroOpenImg" ref={le => (heroOpenImg = le)}
       style={{
         display: "grid",
+        clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
       }}
     >
       {/* You can use a GatsbyImage component if the image is dynamic */}
@@ -20,7 +27,7 @@ const Hero = () => {
           height: "100vh",
 					objectFit: "cover",
 					placeHolder: "none",
-					loading: "eager"
+					loading: "eager",
           //clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
           // You can set a maximum height for the image, if you wish.
           // maxHeight: 600,
