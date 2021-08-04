@@ -18,7 +18,6 @@ const Footer = () => {
             height: "100vh",
             objectFit: "cover",
             placeHolder: "none",
-            className: "bg-opacity-95",
             //clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
             // You can set a maximum height for the image, if you wish.
             // maxHeight: 600,
@@ -53,24 +52,27 @@ const Footer = () => {
           />
         </a>
         <div className="space-y-12 lg:space-y-0 mb-16 2xl:mb-24 lg:flex justify-between xl:w-10/12 2xl:w-2/3 mx-auto">
-          <div id="footer_address" className="text-center lg:text-left lg:w-1/3">
-            <h3 className="antialiased font-serif italic font-light text-3xl mb-10">
+          <div
+            id="footer_address"
+            className="text-center lg:text-left lg:w-1/3"
+          >
+            <h3 className="antialiased font-serif italic font-light text-3xl mb-5 lg:mb-10">
               Адрес
             </h3>
-            <p class="leading-loose antialiased">
+            <p className="leading-loose antialiased">
               353993 Россия,<br></br>
               Краснодарский край,<br></br>
               г.Новороссийск,<br></br>
               п.Мысхако, ул.Луговая, 5
             </p>
-					</div>
-					<ContactForm />
+          </div>
+          <ContactForm />
           <div
             id="footer_contact"
             className="text-center lg:text-left lg:w-1/3 lg:flex"
           >
             <div className="ml-auto">
-              <h3 class="antialiased font-serif italic font-light text-3xl mb-10">
+              <h3 className="antialiased font-serif italic font-light text-3xl mb-10">
                 Контакты
               </h3>
               <p className="leading-loose antialiased">
@@ -92,9 +94,12 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div class="space-y-4 mb-16">
+        <div className="space-y-4 mb-16">
           <div>
-            <Link className="notTarget uppercase text-xs text-white" to="/page-2/">
+            <Link
+              className="notTarget uppercase text-xs text-white"
+              to="/page-2/"
+            >
               Отель<br></br>
             </Link>
           </div>
@@ -122,23 +127,28 @@ const Footer = () => {
               Услуги<br></br>
             </Link>
           </div>
-          <div>
+          
+				</div>
+				<div className="grid grid-cols-1 lg:grid-cols-3 mb-4 md:mb-8 gap-4 justify-center">
             <Link
-              className="notTarget uppercase text-xs text-white"
+              className="notTarget uppercase text-xs text-white text-center lg:text-right"
               to="/page-2/"
             >
               Политика конфиденциальности<br></br>
             </Link>
-          </div>
-          <div>
             <Link
               className="notTarget uppercase text-xs text-white"
               to="/page-2/"
             >
               Политика использования файлов cookie<br></br>
+					</Link>
+					<Link
+              className="notTarget uppercase text-xs text-white text-center lg:text-left"
+              to="/page-2/"
+            >
+              Создание сайта<br></br>
             </Link>
           </div>
-        </div>
         <div className="copyright">
           <p className="antialiased">
             Copyright &copy; {new Date().getFullYear()}
