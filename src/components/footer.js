@@ -41,7 +41,7 @@ const Footer = () => {
       >
         <a
           id="footer_logo"
-          class="logo_group m-auto sm:mb-0 lg:mb-40 space-y-2"
+          className="logo_group m-auto sm:mb-0 lg:mb-40 space-y-2"
           href=""
         >
           <StaticImage

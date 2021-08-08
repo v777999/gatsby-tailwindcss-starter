@@ -11,8 +11,11 @@ import Hero from "../components/Hero"
 import Footer from "../components/footer"
 import MenuBar from "../components/MenuBar"
 
-const IndexPage = () => {
+if (typeof window !== `undefined`) {
   gsap.registerPlugin(ScrollTrigger)
+}
+
+const IndexPage = () => {
   const ref = useRef(null)
 
   useEffect(() => {
@@ -23,26 +26,27 @@ const IndexPage = () => {
         .timeline({
           scrollTrigger: {
             trigger: element,
-            start: "top bottom",
-            end: "top top",
+            start: "top 80%",
+            end: "+=200px",
             scrub: true,
-            markers: false,
+            markers: true,
+            toggleActions: "restart none none reset",
           },
         })
         .to(element.querySelector("h1"), {
           backgroundImage:
-						"linear-gradient(45deg, #eee -100%, #000 50%, #eee 100%)",
-					opacity: 1,
-          duration: 2,
+            "linear-gradient(45deg, #eee -100%, #000 50%, #eee 100%)",
+          opacity: 1,
+          duration: 3,
           ease: "none",
         })
         .from(
           element.querySelectorAll("p"),
           {
-            duration: 2,
+            duration: 3,
             opacity: 0,
             y: 50,
-            stagger: 0.2,
+            stagger: 0.3,
           },
           0.3
         )
@@ -52,8 +56,8 @@ const IndexPage = () => {
     <div id="scroll-container">
       <Layout pageInfo={{ pageName: "index" }}>
         <SEO title="Home" />
-        {/* <MenuBar /> */}
         <Hero />
+        <MenuBar />
         <Wrapper>
           <div ref={ref} className="bg-white pt-20 pl-10">
             <section>
@@ -128,13 +132,13 @@ const Wrapper = styled.div`
     padding-top: 60vh;
   }
 
-	section {
-		margin-bottom: 10vw;
-	}
+  section {
+    margin-bottom: 10vw;
+  }
 
   p {
     font-size: 24px;
-		color: #000;
+    color: #000;
     width: 50vw;
     line-height: 34px;
   }
@@ -142,12 +146,12 @@ const Wrapper = styled.div`
   h1 {
     width: 50%;
     margin-bottom: 20px;
-		opacity: 0;
+    opacity: 0;
     margin-top: 60px;
     font-size: 4em;
     background-image: linear-gradient(45deg, #eee -200%, #000 -100%, #eee 0%);
     background-position: "100px 100px";
-		background-clip: text;
+    background-clip: text;
     -webkit-background-clip: text;
     /* -webkit-text-fill-color: transparent; */
   }
